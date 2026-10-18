@@ -38,7 +38,7 @@ A beginner JavaScript project focused on programming fundamentals, user input, c
 
 **Technologies:** HTML, JavaScript
 
-Explore the project in the [`JavaScript-Week1`](./JavaScript-Week1/) folder.
+Explore the project in the [`JavaScript-Week1`](./Javascript-Week1/) folder.
 
 ##  Goals
 
