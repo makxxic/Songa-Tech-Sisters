@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Organize opportunities, deadlines and application next steps in one place.">
+  <title>My Opportunity Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="My Opportunity Tracker home">
+        <span class="brand-mark" aria-hidden="true">OT</span>
+        <span>Opportunity Tracker</span>
+      </a>
+      <span class="header-note">Your next opportunity starts with a plan.</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">STAY READY. STAY ORGANIZED.</p>
+          <h1 id="page-title">My Opportunity Tracker</h1>
+          <p class="hero-description">
+            Keep scholarships, internships, mentorships and training opportunities
+            organized. Know what is coming up and what you need to do next.
+          </p>
+        </div>
+        <div class="hero-decoration" aria-hidden="true">
+          <span class="decoration-circle circle-one"></span>
+          <span class="decoration-circle circle-two"></span>
+          <span class="decoration-card">One step at a time <span>↗</span></span>
+        </div>
+      </section>
+
+      <section class="summary-section" aria-labelledby="summary-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR OVERVIEW</p>
+            <h2 id="summary-heading">Application progress</h2>
+          </div>
+          <p class="section-hint">Your figures update as you manage opportunities.</p>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-card summary-total">
+            <div class="summary-icon" aria-hidden="true">◎</div>
+            <p class="summary-label">Total opportunities</p>
+            <p class="summary-value" id="total-count">0</p>
+          </article>
+          <article class="summary-card summary-preparing">
+            <div class="summary-icon" aria-hidden="true">↗</div>
+            <p class="summary-label">Being prepared</p>
+            <p class="summary-value" id="preparing-count">0</p>
+          </article>
+          <article class="summary-card summary-submitted">
+            <div class="summary-icon" aria-hidden="true">✓</div>
+            <p class="summary-label">Applications submitted</p>
+            <p class="summary-value" id="submitted-count">0</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="form-panel" aria-labelledby="form-heading">
+          <div class="panel-heading">
+            <p class="eyebrow">ADD SOMETHING NEW</p>
+            <h2 id="form-heading">Record an opportunity</h2>
+            <p>Capture the details now so you can take action later.</p>
+          </div>
+
+          <form id="opportunity-form" novalidate>
+            <div class="form-field">
+              <label for="opportunity-name">Opportunity name <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="opportunity-name"
+                name="opportunityName"
+                placeholder="e.g. Data Science Internship"
+                maxlength="100"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="opportunity-type">Opportunity type <span aria-hidden="true">*</span></label>
+              <select id="opportunity-type" name="opportunityType" required>
+                <option value="">Select a category</option>
+                <option value="Scholarship">Scholarship</option>
+                <option value="Internship">Internship</option>
+                <option value="Mentorship">Mentorship</option>
+                <option value="Training">Training</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="application-deadline">Application deadline <span aria-hidden="true">*</span></label>
+              <input type="date" id="application-deadline" name="deadline" required>
+            </div>
+
+            <div class="form-field">
+              <label for="next-action">Next action <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="next-action"
+                name="nextAction"
+                placeholder="e.g. Update CV and request a reference"
+                maxlength="160"
+                required
+              >
+              <span class="field-hint">Write the next practical step you need to take.</span>
+            </div>
+
+            <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
+            <button class="button button-primary submit-button" type="submit">
+              <span aria-hidden="true">＋</span> Add Opportunity
+            </button>
+            <p class="required-note">* Required fields</p>
+          </form>
+        </section>
+
+        <section class="opportunities-panel" aria-labelledby="opportunities-heading">
+          <div class="list-heading">
+            <div>
+              <p class="eyebrow">YOUR OPPORTUNITIES</p>
+              <h2 id="opportunities-heading">Keep moving forward</h2>
+            </div>
+            <span class="list-count" id="list-count">0 saved</span>
+          </div>
+
+          <div id="opportunity-list" class="opportunity-list" aria-live="polite"></div>
+          <div id="empty-message" class="empty-state" hidden>
+            <div class="empty-icon" aria-hidden="true">✳</div>
+            <h3>No opportunities yet</h3>
+            <p>Add your first opportunity using the form. Your list will appear here.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built to make opportunity tracking simpler.</p>
+      <p>Your information is saved in this browser on this device.</p>
+    </footer>
+  </div>
+</body>
+</html>
